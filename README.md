@@ -20,12 +20,38 @@ Next add the plugin to your `babel.config.js`:
 export default () => {
   return {
     plugins: [
-      ['babel-plugin-magic-comments', {
+      ['magic-comments', {
+        verbose: true,
         webpackChunkName: true,
-        webpackMode: "eager",
         webpackFetchPriority: "high"
       }]
     ]
   }
 }
 ```
+
+Or include it directly in your `webpack.config.js`:
+
+```js
+module: {
+  rules: [
+    {
+      test: /\.[jt]sx?$/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          plugins: [
+            ['magic-comments', {
+              verbose: true,
+              webpackChunkName: true,
+              webpackFetchPriority: "high"
+            }]
+          ]
+        }
+      }
+    }
+  ]
+}
+```
+
+Here is the [options documentation](https://github.com/morganney/magic-comments-loader#options) with the exception of (`mode`) which this package does not support.
