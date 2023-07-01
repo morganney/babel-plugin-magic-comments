@@ -1,6 +1,7 @@
 # [`babel-plugin-magic-comments`](https://www.npmjs.com/package/babel-plugin-magic-comments)
 
 ![CI](https://github.com/morganney/babel-plugin-magic-comments/actions/workflows/ci.yml/badge.svg)
+[![codecov](https://codecov.io/gh/morganney/babel-plugin-magic-comments/branch/main/graph/badge.svg?token=92J7AMZH8N)](https://codecov.io/gh/morganney/babel-plugin-magic-comments)
 [![NPM version](https://img.shields.io/npm/v/babel-plugin-magic-comments.svg)](https://www.npmjs.com/package/babel-plugin-magic-comments)
 
 Babel plugin to add webpack [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) to your dynamic `import()` expressions at build time.
