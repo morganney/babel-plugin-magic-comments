@@ -1,0 +1,21 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+        "modules": false
+    }]
+  ],
+  "env": {
+    "cjs": {
+      "presets": [
+        ["@babel/preset-env", {
+          "modules": "commonjs"
+        }]
+      ],
+      "plugins": [[
+        "replace-import-extension", {
+          "extMapping": { ".js": ".cjs" }
+        }]
+      ]
+    }
+  }
+}

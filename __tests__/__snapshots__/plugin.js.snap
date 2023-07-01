@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`babel-plugin-magic-comments adds the other magic comments 1`] = `"const foo = import( /* webpackPrefetch: true, webpackPreload: true, webpackMode: "eager", webpackFetchPriority: "high", webpackIgnore: true, webpackExports: ["foo", "bar"], webpackInclude: /\\.json$/, webpackExclude: /\\.skip\\.json$/ */'./folder/module.js');"`;
+
+exports[`babel-plugin-magic-comments adds webpackChunkName magic comments 1`] = `"const foo = import( /* webpackChunkName: "folder-module" */'./folder/module.js');"`;
+
+exports[`babel-plugin-magic-comments adds webpackChunkName magic comments 2`] = `
+"import( /* webpackChunkName: "lang-[request]" */\`./lang/\${locale}.json\`);
+const tr = import( /* webpackChunkName: "[request]-to" */\`./\${path}/to.json\`);
+import( /* webpackChunkName: "one-two-[request]" */\`./one/two/\${three}.json\`);"
+`;
+
+exports[`babel-plugin-magic-comments adds webpackChunkName magic comments 3`] = `
+"import( /* webpackChunkName: "folder-module" */'./folder/module.js').then(() => {
+  const slug = 'module';
+  const json = \`foo-bar-baz-\${import( /* webpackChunkName: "[request]" */\`./\${slug}.json\`)}abc\`;
+  const myString = 'abc,import("foo/bar")xyz';
+  return json;
+});
+// import('@fake/module')
+// import('@fake/module')
+
+import( /* some comment */'./folder/skip.js');
+const foo = './module.json';
+const bar = import( /* webpackChunkName: "foo" */foo);
+const reg = () => {};
+/**
+ * import('@fake/module')
+ */
+
+/*
+    blah
+    import('@fake/module')
+
+    with other text
+      */
+reg([{
+  module: import( /* webpackChunkName: "@pkg-foo" */'@pkg/foo'),
+  elem: 'Foo'
+}, {
+  module: import( /* webpackChunkName: "@pkg-bar" */'@pkg/bar'),
+  elem: 'Bar'
+}, {
+  module: import( /* webpackChunkName: "@pkg-baz" */'@pkg/baz'),
+  elem: 'Baz'
+}]);
+
+/*
+ * Lorem ipsum dolor sit amet
+ * import('@fake/module')
+ * import('@fake/module') foo import('@fake/module')
+ * import('@fake/module')
+ * Lorem ipsum.
+ */
+
+Promise.all([import( /* webpackChunkName: "@pkg-a" */'@pkg/a'), import( /* webpackChunkName: "@pkg-b" */'@pkg/b'), import( /* webpackChunkName: "@pkg-c" */'@pkg/c')]);
+
+/* import in comment import('@fake/module') */"
+`;
+
+exports[`babel-plugin-magic-comments does not add magic comments when there are none 1`] = `"const foo = import('./folder/module.js');"`;
