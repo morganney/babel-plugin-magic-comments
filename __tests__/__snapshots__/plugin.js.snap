@@ -14,26 +14,9 @@ exports[`babel-plugin-magic-comments adds webpackChunkName magic comments 3`] = 
 "import( /* webpackChunkName: "folder-module" */'./folder/module.js').then(() => {
   const slug = 'module';
   const json = \`foo-bar-baz-\${import( /* webpackChunkName: "[request]" */\`./\${slug}.json\`)}abc\`;
-  const myString = 'abc,import("foo/bar")xyz';
   return json;
 });
-// import('@fake/module')
-// import('@fake/module')
-
 import( /* some comment */'./folder/skip.js');
-const foo = './module.json';
-const bar = import( /* webpackChunkName: "foo" */foo);
-const reg = () => {};
-/**
- * import('@fake/module')
- */
-
-/*
-    blah
-    import('@fake/module')
-
-    with other text
-      */
 reg([{
   module: import( /* webpackChunkName: "@pkg-foo" */'@pkg/foo'),
   elem: 'Foo'
@@ -44,18 +27,7 @@ reg([{
   module: import( /* webpackChunkName: "@pkg-baz" */'@pkg/baz'),
   elem: 'Baz'
 }]);
-
-/*
- * Lorem ipsum dolor sit amet
- * import('@fake/module')
- * import('@fake/module') foo import('@fake/module')
- * import('@fake/module')
- * Lorem ipsum.
- */
-
-Promise.all([import( /* webpackChunkName: "@pkg-a" */'@pkg/a'), import( /* webpackChunkName: "@pkg-b" */'@pkg/b'), import( /* webpackChunkName: "@pkg-c" */'@pkg/c')]);
-
-/* import in comment import('@fake/module') */"
+Promise.all([import( /* webpackChunkName: "@pkg-a" */'@pkg/a'), import( /* webpackChunkName: "@pkg-b" */'@pkg/b'), import( /* webpackChunkName: "@pkg-c" */'@pkg/c')]);"
 `;
 
 exports[`babel-plugin-magic-comments does not add magic comments when there are none 1`] = `"const foo = import('./folder/module.js');"`;

@@ -54,4 +54,10 @@ module: {
 }
 ```
 
-Here is the [options documentation](https://github.com/morganney/magic-comments-loader#options) with the exception of (`mode`) which this package does not support.
+## Options
+
+The options are the same as those used by [`magic-comments-loader`](https://github.com/morganney/magic-comments-loader#options), with the exception of `mode` (not supported).
+
+## Examples
+
+For some more usage examples you can check out the ones provided by [`magic-comments-loader`](https://github.com/morganney/magic-comments-loader#examples), particularly the loader's `options`.
