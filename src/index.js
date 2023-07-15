@@ -19,10 +19,11 @@ export default function () {
           baseDataPath: 'options'
         })
 
-        if (node.callee?.type === 'Import') {
+        if (path.get('callee').isImport()) {
           const { verbose = false, match = 'module', ...magicCommentOpts } = opts
-          const { root, filename } = state.file.opts
-          const { code } = state.file
+          const { root, filename } = this.file.opts
+          const { code } = this.file
+
           /**
            * Only one argument for now. Either way, the first is the specifier.
            * @see https://github.com/tc39/proposal-import-attributes
