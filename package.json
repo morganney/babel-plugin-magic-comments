@@ -42,7 +42,7 @@
   "author": "Morgan Ney <morganney@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "magic-comments": "^2.1.1",
+    "magic-comments": "^2.1.2",
     "schema-utils": "^4.2.0"
   },
   "devDependencies": {
