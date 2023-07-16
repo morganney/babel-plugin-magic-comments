@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-magic-comments",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Adds webpack magic comments to your dynamic imports.",
   "type": "module",
   "main": "dist",
@@ -32,10 +32,17 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/morganney/babel-plugin-magic-comments.git"
+  },
+  "bugs": {
+    "url": "https://github.com/morganney/babel-plugin-magic-comments/issues"
+  },
   "author": "Morgan Ney <morganney@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "magic-comments": "^2.1.1",
+    "magic-comments": "^2.1.2",
     "schema-utils": "^4.2.0"
   },
   "devDependencies": {
@@ -43,7 +50,7 @@
     "@babel/core": "^7.22.5",
     "@babel/eslint-parser": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
-    "babel-dual-package": "^1.0.0-alpha.0",
+    "babel-dual-package": "^1.0.0-alpha.1",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-jest": "^27.2.1",
