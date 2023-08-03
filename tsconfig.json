@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "dist",
+    "emitDeclarationOnly": true,
+    "isolatedModules": true,
+    "strict": true
+  },
+  "include": ["src"]
+}

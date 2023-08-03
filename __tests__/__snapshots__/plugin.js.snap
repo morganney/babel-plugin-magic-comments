@@ -1,33 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`babel-plugin-magic-comments adds the other magic comments 1`] = `"const foo = import( /* webpackPrefetch: true, webpackPreload: true, webpackMode: "eager", webpackFetchPriority: "high", webpackIgnore: true, webpackExports: ["foo", "bar"], webpackInclude: /\\.json$/, webpackExclude: /\\.skip\\.json$/ */'./folder/module.js');"`;
+exports[`babel-plugin-magic-comments adds the other magic comments 1`] = `
+""use strict";
 
-exports[`babel-plugin-magic-comments adds webpackChunkName magic comments 1`] = `"const foo = import( /* webpackChunkName: "folder-module" */'./folder/module.js');"`;
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+const foo = Promise.resolve().then(() => _interopRequireWildcard(require( /* webpackPrefetch: true, webpackPreload: true, webpackMode: "eager", webpackFetchPriority: "high", webpackIgnore: true, webpackExports: ["foo", "bar"], webpackInclude: /\\.json$/, webpackExclude: /\\.skip\\.json$/ */'./folder/module.js')));"
+`;
+
+exports[`babel-plugin-magic-comments adds webpackChunkName magic comments 1`] = `
+""use strict";
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+const foo = Promise.resolve().then(() => _interopRequireWildcard(require( /* webpackChunkName: "folder-module" */'./folder/module.js')));"
+`;
 
 exports[`babel-plugin-magic-comments adds webpackChunkName magic comments 2`] = `
-"import( /* webpackChunkName: "lang-[request]" */\`./lang/\${locale}.json\`);
-const tr = import( /* webpackChunkName: "[request]-to" */\`./\${path}/to.json\`);
-import( /* webpackChunkName: "one-two-[request]" */\`./one/two/\${three}.json\`);"
+""use strict";
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+(specifier => new Promise(r => r(specifier)).then(s => _interopRequireWildcard(require(s))))( /* webpackChunkName: "lang-[request]" */\`./lang/\${locale}.json\`);
+const tr = (specifier => new Promise(r => r(specifier)).then(s => _interopRequireWildcard(require(s))))( /* webpackChunkName: "[request]-to" */\`./\${path}/to.json\`);
+(specifier => new Promise(r => r(specifier)).then(s => _interopRequireWildcard(require(s))))( /* webpackChunkName: "one-two-[request]" */\`./one/two/\${three}.json\`);"
 `;
 
 exports[`babel-plugin-magic-comments adds webpackChunkName magic comments 3`] = `
-"import( /* webpackChunkName: "folder-module" */'./folder/module.js').then(() => {
+""use strict";
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+Promise.resolve().then(() => _interopRequireWildcard(require( /* webpackChunkName: "folder-module" */'./folder/module.js'))).then(() => {
   const slug = 'module';
-  const json = \`foo-bar-baz-\${import( /* webpackChunkName: "[request]" */\`./\${slug}.json\`)}abc\`;
+  const json = \`foo-bar-baz-\${(specifier => new Promise(r => r(specifier)).then(s => _interopRequireWildcard(require(s))))( /* webpackChunkName: "[request]" */\`./\${slug}.json\`)}abc\`;
   return json;
 });
-import( /* some comment */'./folder/skip.js');
+Promise.resolve().then(() => _interopRequireWildcard(require( /* some comment */'./folder/skip.js')));
 reg([{
-  module: import( /* webpackChunkName: "@pkg-foo" */'@pkg/foo'),
+  module: Promise.resolve().then(() => _interopRequireWildcard(require( /* webpackChunkName: "@pkg-foo" */'@pkg/foo'))),
   elem: 'Foo'
 }, {
-  module: import( /* webpackChunkName: "@pkg-bar" */'@pkg/bar'),
+  module: Promise.resolve().then(() => _interopRequireWildcard(require( /* webpackChunkName: "@pkg-bar" */'@pkg/bar'))),
   elem: 'Bar'
 }, {
-  module: import( /* webpackChunkName: "@pkg-baz" */'@pkg/baz'),
+  module: Promise.resolve().then(() => _interopRequireWildcard(require( /* webpackChunkName: "@pkg-baz" */'@pkg/baz'))),
   elem: 'Baz'
 }]);
-Promise.all([import( /* webpackChunkName: "@pkg-a" */'@pkg/a'), import( /* webpackChunkName: "@pkg-b" */'@pkg/b'), import( /* webpackChunkName: "@pkg-c" */'@pkg/c')]);"
+Promise.all([Promise.resolve().then(() => _interopRequireWildcard(require( /* webpackChunkName: "@pkg-a" */'@pkg/a'))), Promise.resolve().then(() => _interopRequireWildcard(require( /* webpackChunkName: "@pkg-b" */'@pkg/b'))), Promise.resolve().then(() => _interopRequireWildcard(require( /* webpackChunkName: "@pkg-c" */'@pkg/c')))]);"
 `;
 
-exports[`babel-plugin-magic-comments does not add magic comments when there are none 1`] = `"const foo = import('./folder/module.js');"`;
+exports[`babel-plugin-magic-comments does not add magic comments when there are none 1`] = `
+""use strict";
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+const foo = Promise.resolve().then(() => _interopRequireWildcard(require('./folder/module.js')));"
+`;
