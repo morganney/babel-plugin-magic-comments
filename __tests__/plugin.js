@@ -1,24 +1,20 @@
-import { resolve, dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { resolve } from 'node:path'
 
-import { jest } from '@jest/globals'
+import { describe, it, expect } from '@jest/globals'
 import { transformFileSync } from '@babel/core'
 
-import plugin from '../src/index.js'
-
-const directory = dirname(fileURLToPath(import.meta.url))
-
-jest.mock('magic-comments', () => {
-  return {
-    ...jest.requireActual('magic-comments'),
-    getMagicComment: jest.fn(() => '')
-  }
-})
+/**
+ * Switching to TypeScript has made a mess of my
+ * simple, clean snapshots :cry:.
+ *
+ * @TODO switch to node:test
+ */
+import plugin from '../src/index.ts'
 
 describe('babel-plugin-magic-comments', () => {
   it('adds webpackChunkName magic comments', () => {
     const { code: basic } = transformFileSync(
-      resolve(directory, '__fixtures__/basic.js'),
+      resolve(__dirname, '__fixtures__/basic.js'),
       {
         plugins: [
           [
@@ -36,7 +32,7 @@ describe('babel-plugin-magic-comments', () => {
     expect(basic).toMatchSnapshot()
 
     const { code: dynamic } = transformFileSync(
-      resolve(directory, '__fixtures__/dynamic.js'),
+      resolve(__dirname, '__fixtures__/dynamic.js'),
       {
         plugins: [
           [
@@ -51,7 +47,7 @@ describe('babel-plugin-magic-comments', () => {
 
     expect(dynamic).toMatchSnapshot()
 
-    const { code: file } = transformFileSync(resolve(directory, '__fixtures__/file.js'), {
+    const { code: file } = transformFileSync(resolve(__dirname, '__fixtures__/file.js'), {
       plugins: [
         [
           plugin,
@@ -66,7 +62,7 @@ describe('babel-plugin-magic-comments', () => {
   })
 
   it('adds the other magic comments', () => {
-    const { code } = transformFileSync(resolve(directory, '__fixtures__/basic.js'), {
+    const { code } = transformFileSync(resolve(__dirname, '__fixtures__/basic.js'), {
       plugins: [
         [
           plugin,
@@ -92,7 +88,7 @@ describe('babel-plugin-magic-comments', () => {
   })
 
   it('does not add magic comments when there are none', () => {
-    const { code } = transformFileSync(resolve(directory, '__fixtures__/basic.js'), {
+    const { code } = transformFileSync(resolve(__dirname, '__fixtures__/basic.js'), {
       plugins: [
         [
           plugin,
