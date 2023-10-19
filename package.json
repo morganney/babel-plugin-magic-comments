@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-magic-comments",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Adds webpack magic comments to your dynamic imports.",
   "type": "module",
   "main": "dist",
@@ -62,7 +62,7 @@
     "@types/babel__helper-plugin-utils": "^7.10.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "babel-dual-package": "^1.0.0",
+    "babel-dual-package": "^1.1.2",
     "babel-jest": "^29.6.2",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
