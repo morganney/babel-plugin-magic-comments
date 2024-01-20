@@ -50,7 +50,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/helper-plugin-utils": "^7.22.5",
-    "magic-comments": "^2.1.8",
+    "magic-comments": "^2.1.11",
     "schema-utils": "^4.2.0"
   },
   "devDependencies": {
